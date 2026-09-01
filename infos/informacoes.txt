@@ -1,0 +1,18 @@
+c - if
+se não - else
+enquanto - while
+para - for
+função - function
+escolha - switch
+caso - case
+pare - break
+retorne - return
+escreva - printf
+leia - scanf
+inteiro - int
+verdadeiro - true
+falço - falce
+real - float/double
+// pyton = float e java = double
+cadeia - char. pyoton = str
+logico - bool. java = boolean
