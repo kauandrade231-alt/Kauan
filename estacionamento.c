@@ -9,17 +9,15 @@ void estacionamento()
     int vagas = 20;
     int veiculo;
     char placa[10];
-    char placabusca[10];
-    char tipoLido[10];
     int tempoLido;
     float tempo;
-    int situacao;
     float faturamento = 0.0;
     int opcao;
     float valorApagar;
     int veiculosAtendidos = 0;
+    
 
-    arquivo = fopen("eu não sei.txt", "a");
+    arquivo = fopen("veiculo.txt", "r");
     if (arquivo == NULL)
     {
 
