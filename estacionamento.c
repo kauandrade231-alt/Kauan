@@ -9,12 +9,15 @@ void estacionamento()
     int vagas = 20;
     int veiculo;
     char placa[10];
+    char placabusca[10];
+    char tipoLido[10];
+    int tempoLido;
     float tempo;
     int situacao;
-    float faturamento;
+    float faturamento = 0.0;
     int opcao;
     float valorApagar;
-    int veiculosAtendidos;
+    int veiculosAtendidos = 0;
 
     arquivo = fopen("eu não sei.txt", "a");
     if (arquivo == NULL)
@@ -39,7 +42,10 @@ void estacionamento()
         printf("\n 2. - Registrar saida");
 
         printf("\n 3. - Exibir faturamento");
-        printf("\n 0 - Encerrer Sistema ");
+        printf("\n 4. - exibir faturamento");
+        printf("\n5. - Consultar veiculos estacionados");
+        printf("\n6. - Consultar histórico");
+        printf("\n 7 - Encerrer Sistema ");
         printf("\n qual vai escolher: ");
 
         scanf("%d", &opcao);
@@ -60,7 +66,8 @@ void estacionamento()
 
                 printf("Tipo do veiculo: 01. - carro ou 02. - moto: ");
                 scanf("%d", &veiculo);
-
+            
+                
                 if (veiculo == 1 || veiculo == 2)
                 {
 
@@ -68,7 +75,7 @@ void estacionamento()
 
                     printf("entrada liberada :) \nvagas sobrando%d", vagas);
 
-                    fprintf(arquivo, "ENTRADA | PLACA: %s | TIPO: %S\n", placa, (veiculo == 1) ? "Carro" : "Moto");
+                    fprintf(arquivo, "ENTRADA | PLACA: %s | TIPO: %s\n", placa, (veiculo == 1) ? "Carro" : "Moto");
                 }
                 else
                 {
@@ -83,7 +90,7 @@ void estacionamento()
             printf("\n--- REGISTRAR SAIDA ---\n");
             printf("Qual a placa");
 
-            scanf("%s", &placa);
+            scanf("%s", placa);
 
             printf("Tipo do veiculo (1- Carro | 2. Moto):");
             scanf("%d", &veiculo);
@@ -91,7 +98,7 @@ void estacionamento()
             printf("ficou por quanto tempo");
             scanf("%f", &tempo);
 
-            valorApagar == 0.0;
+            valorApagar = 0.0;
 
             if (veiculo == 1)
             {
@@ -115,7 +122,7 @@ void estacionamento()
                 {
                     printf("Tipo de veiculo invalido!\n");
                 }
-                break;
+                
 
                 vagas++;
                 faturamento += valorApagar;
@@ -145,9 +152,10 @@ void estacionamento()
             }
         }
 
-    } while (opcao != 0);
+    } while (opcao != 7);
 
-    fclose(arquivo);
-
-    return 0;
+   
+  fclose(arquivo);
+return 7;
+    
 }
